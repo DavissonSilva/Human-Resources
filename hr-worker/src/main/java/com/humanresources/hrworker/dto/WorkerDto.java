@@ -4,7 +4,7 @@ public class WorkerDto {
 
 	private Long id;
 	private String name;
-	private String dailyIncome;
+	private Double dailyIncome;
 	
 	public Long getId() {
 		return id;
@@ -18,10 +18,10 @@ public class WorkerDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDailyIncome() {
+	public Double getDailyIncome() {
 		return dailyIncome;
 	}
-	public void setDailyIncome(String dailyIncome) {
+	public void setDailyIncome(Double dailyIncome) {
 		this.dailyIncome = dailyIncome;
 	}
 	

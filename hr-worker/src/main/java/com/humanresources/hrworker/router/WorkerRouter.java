@@ -21,19 +21,10 @@ public class WorkerRouter {
 	private WorkerServiceImpl serviceImpl;
 
 	@GetMapping(path = "workers/{id}")
-	public ResponseEntity<Response<WorkerDto>> FinById(@PathVariable Long id) {
+	public ResponseEntity<WorkerDto> FinById(@PathVariable Long id) {
 
 		WorkerBuild workerBuild = new WorkerBuild();
-		Response<WorkerDto> response = new Response<WorkerDto>();
-
-		try {
-			Optional<Worker> workers = serviceImpl.buscaTrabalhardorPorId(id);
-			response.setData(workerBuild.conversorDto(workers.get()));
-			return ResponseEntity.ok(response);
-		} catch (Exception e) {
-			response.getErrors().add("Trabalhador não encotrado para o ID: " + id);
-			return ResponseEntity.badRequest().body(response);
-
-		}
+		Optional<Worker> workers = serviceImpl.buscaTrabalhardorPorId(id);
+		return ResponseEntity.ok(workerBuild.conversorDto(workers.get()));
 	}
 }
