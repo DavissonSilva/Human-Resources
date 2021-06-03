@@ -18,12 +18,11 @@ public class PaymentRouter {
 	private PaymentService service;
 	
 	@GetMapping(value = "/{workerId}/days/{days}")
-	public ResponseEntity<Payment>getPayment(
-			@PathVariable Long workerId,
+	public ResponseEntity<Object>getPayment(@PathVariable Long workerId,
 			@PathVariable Integer days){
 		
-		Payment payment = service.getPayment(workerId, days);
+			Object object = service.getPayment(workerId, days);
+			return ResponseEntity.ok(object);
 		
-		return ResponseEntity.ok(payment);
 	}
 }
