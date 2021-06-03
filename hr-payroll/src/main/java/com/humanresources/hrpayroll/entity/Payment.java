@@ -8,23 +8,7 @@ public class Payment implements Serializable{
 	private String name;
 	private Double dailyIncome;
 	private Integer days;
-	private Object data;
 	
-	public Payment(Object data) {
-		this.data = data;
-	}
-
-	
-	public Object getData() {
-		return data;
-	}
-
-
-	public void setData(Object data) {
-		this.data = data;
-	}
-
-
 	public Payment() {
 	}
 
