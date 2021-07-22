@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.humanresources.hrworker.build.WorkerBuild;
@@ -17,6 +18,8 @@ import com.humanresources.hrworker.dto.WorkerDto;
 import com.humanresources.hrworker.entity.Worker;
 import com.humanresources.hrworker.implservice.WorkerServiceImpl;
 import com.humanresources.hrworker.response.Response;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class WorkerRouter {
